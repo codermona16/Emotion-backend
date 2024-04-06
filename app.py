@@ -29,7 +29,7 @@ def processController():
             print(request.files)
             
             
-            audio = request.files['audio']
+            audio = request.files['audio_file']
             
             audio.save(os.path.join("static/", audio.filename))
             process(audio.filename)
