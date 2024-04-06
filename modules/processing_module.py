@@ -27,15 +27,15 @@ def processAudio(path):
         # Interpret the predictions
         # Assuming the model predicts probabilities for each class, you can print the predicted class
         predicted_class_index = np.argmax(predictions)
-        class_labels = ['01','02','03','04','05']  # Define your class labels
+        class_labels = ['Happy','Sad','Angry','Surprise','Neutral']  # Define your class labels
         predicted_class = class_labels[predicted_class_index]
-        print("Predicted Class:", predicted_class)
+        return "Predicted Class : " + predicted_class
     except Exception as e:
-        print(f"Error processing video: {e}")
+        return "Error processing video: " +e
 
 def process(filename):
     try:
         path = 'static/' + filename
-        processAudio(path)
+        return processAudio(path)
     except Exception as e:
-        print(f"Error in processing: {e}")
+        return "Error in processing: " +e

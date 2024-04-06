@@ -29,11 +29,11 @@ def processController():
             print(request.files)
             
             
-            audio = request.files['audio_file']
+            audio = request.files['audio']
             
             audio.save(os.path.join("static/", audio.filename))
-            process(audio.filename)
-            return {"status": True, "message": "Process POST Requesttttt"}
+            output = process(audio.filename)
+            return {"status": True, "message": "output is "+output}
         # except Err:
 
     
