@@ -35,7 +35,7 @@ def processAudio(path):
 
 def process(filename):
     try:
-        path = 'static' + filename
+        path = 'static/' + filename
         processAudio(path)
     except Exception as e:
         print(f"Error in processing: {e}")
